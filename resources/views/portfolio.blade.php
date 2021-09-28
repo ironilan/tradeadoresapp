@@ -90,10 +90,10 @@
                                         <table class="table mb-0 table-responsive-sm">
                                             <tbody>
                                                 <tr style="background: #03001955;">
-                                                    <th>Simbolo</th>
+                                                    <th>Acción</th>
                                                     <th>P. Entrada</th>
-                                                    <th>P. Salida 1</th>
-                                                    <th>P. Salida 2</th>
+                                                    <th>P. Salida </th>
+                                                    
                                                     <th>Movimiento</th>
                                                     <th>Porcentaje</th>
                                                     <th>Lotaje</th>
@@ -106,22 +106,22 @@
                                                         <i class="cc BTC"></i> AAPL
                                                     </td>                                            
 
-                                                    <td>0.125 USD</td>
+                                                    <td>150.50</td>
 
-                                                    <td>0.125 USD</td>
-                                                    <td>-0.125 USD</td>
+                                                    <td>120.70</td>
+                                                   
                                                     <td>
                                                         <span class="badge badge-danger"><i class="la la-arrow-down"></i>Baja</span>
                                                     </td>
-                                                    <td>0.125 USD</td>
-                                                    <td>0.125 USD</td>
-                                                    <td class="text-danger">-0.000242</td>
-                                                    <td>0.125 USD</td>
+                                                    <td>10%</td>
+                                                    <td>0.10 </td>
+                                                    <td class="text-danger">- $ 20</td>
+                                                    <td>155.10</td>
                                                  
-                                                    <td>TMR</td>
-                                                    <td>
+                                                    <td>Abierto</td>
+                                                     <td>
                                                         <div class="edit-option">
-                                                            <a href="#"><i class="fa fa-eye"></i></a>
+                                                            <a href="#" data-toggle="modal" data-target="#modalcalculator"><i class="fa fa-calculator"></i></a>           
                                                             <a href="#"><i class="fa fa-pencil"></i></a>
                                                             <a href="#"><i class="fa fa-trash"></i></a>
                                                         </div>
@@ -134,38 +134,23 @@
 
                                                     <td>0.125 USD</td>
 
-                                                    <td>0.125 USD</td>
+                                                    
                                                     <td>-0.125 USD</td>
                                                     <td>
                                                         <span class="badge badge-danger"><i class="la la-arrow-up"></i>Alza</span>
                                                     </td>
-                                                    <td>0.125 USD</td>
-                                                    <td>0.125 USD</td>
-                                                    <td class="text-success">-0.000242</td>
+                                                    <td>15%</td>
+                                                    <td>0.125 </td>
+                                                    <td class="text-success">$ 70 </td>
                                                     <td>0.125 USD</td>
                                                  
-                                                    <td>TMR</td>
-                                                     <td>
+                                                    <td>Cerrado</td>
+                                                    <td>
                                                         <div class="edit-option">                                                          
                                                             <a href="#"><i class="fa fa-pencil"></i></a>
                                                             <a href="#"><i class="fa fa-trash"></i></a>
                                                         </div>
                                                     </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="buy-thumb"><i class="la la-arrow-up"></i></span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-success">Alza</span>
-                                                    </td>
-                                                    <td>
-                                                        <i class="cc LTC"></i> LTC
-                                                    </td>
-                                                    <td>
-                                                        Using - Card *******8475
-                                                    </td>
-                                                    <td class="text-success">-0.000242 BTC</td>
-                                                    <td>-0.125 USD</td>
                                                 </tr>
                                                 
                                             </tbody>
@@ -176,6 +161,8 @@
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
 @endsection
