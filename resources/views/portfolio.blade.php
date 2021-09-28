@@ -89,21 +89,68 @@
                                     <div class="table-responsive">
                                         <table class="table mb-0 table-responsive-sm">
                                             <tbody>
+                                                <tr style="background: #03001955;">
+                                                    <th>Simbolo</th>
+                                                    <th>P. Entrada</th>
+                                                    <th>P. Salida 1</th>
+                                                    <th>P. Salida 2</th>
+                                                    <th>Movimiento</th>
+                                                    <th>Porcentaje</th>
+                                                    <th>Lotaje</th>
+                                                    <th>Rentabilidad</th>
+                                                    <th>P. Actual</th>
+                                                    <th>Estado</th>
+                                                </tr>
                                                 <tr>
-                                                    <td><span class="sold-thumb"><i class="la la-arrow-down"></i></span>
-                                                    </td>
-
-                                                    <td>
-                                                        <span class="badge badge-danger">Baja</span>
-                                                    </td>
                                                     <td>
                                                         <i class="cc BTC"></i> AAPL
-                                                    </td>
-                                                    <td>
-                                                        Using - Bank *******5264
-                                                    </td>
-                                                    <td class="text-danger">-0.000242 BTC</td>
+                                                    </td>                                            
+
+                                                    <td>0.125 USD</td>
+
+                                                    <td>0.125 USD</td>
                                                     <td>-0.125 USD</td>
+                                                    <td>
+                                                        <span class="badge badge-danger"><i class="la la-arrow-down"></i>Baja</span>
+                                                    </td>
+                                                    <td>0.125 USD</td>
+                                                    <td>0.125 USD</td>
+                                                    <td class="text-danger">-0.000242</td>
+                                                    <td>0.125 USD</td>
+                                                 
+                                                    <td>TMR</td>
+                                                    <td>
+                                                        <div class="edit-option">
+                                                            <a href="#"><i class="fa fa-eye"></i></a>
+                                                            <a href="#"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#"><i class="fa fa-trash"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="cc BTC"></i> AAPL
+                                                    </td>                                            
+
+                                                    <td>0.125 USD</td>
+
+                                                    <td>0.125 USD</td>
+                                                    <td>-0.125 USD</td>
+                                                    <td>
+                                                        <span class="badge badge-danger"><i class="la la-arrow-up"></i>Alza</span>
+                                                    </td>
+                                                    <td>0.125 USD</td>
+                                                    <td>0.125 USD</td>
+                                                    <td class="text-success">-0.000242</td>
+                                                    <td>0.125 USD</td>
+                                                 
+                                                    <td>TMR</td>
+                                                     <td>
+                                                        <div class="edit-option">                                                          
+                                                            <a href="#"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#"><i class="fa fa-trash"></i></a>
+                                                        </div>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td><span class="buy-thumb"><i class="la la-arrow-up"></i></span>
@@ -120,51 +167,7 @@
                                                     <td class="text-success">-0.000242 BTC</td>
                                                     <td>-0.125 USD</td>
                                                 </tr>
-                                                <tr>
-                                                    <td><span class="sold-thumb"><i class="la la-arrow-down"></i></span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-danger">Sold</span>
-                                                    </td>
-                                                    <td>
-                                                        <i class="cc XRP"></i> XRP
-                                                    </td>
-                                                    <td>
-                                                        Using - Card *******8475
-                                                    </td>
-                                                    <td class="text-danger">-0.000242 BTC</td>
-                                                    <td>-0.125 USD</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="buy-thumb"><i class="la la-arrow-up"></i></span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-success">Buy</span>
-                                                    </td>
-                                                    <td>
-                                                        <i class="cc DASH"></i> DASH
-                                                    </td>
-                                                    <td>
-                                                        Using - Card *******2321
-                                                    </td>
-                                                    <td class="text-success">-0.000242 BTC</td>
-                                                    <td>-0.125 USD</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="sold-thumb"><i class="la la-arrow-down"></i></span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-danger">Sold</span>
-                                                    </td>
-                                                    <td>
-                                                        <i class="cc BTC"></i> BTC
-                                                    </td>
-                                                    <td>
-                                                        Using - Card *******2321
-                                                    </td>
-                                                    <td class="text-danger">-0.000242 BTC</td>
-                                                    <td>-0.125 USD</td>
-                                                </tr>
+                                                
                                             </tbody>
                                         </table>
                                     </div>
