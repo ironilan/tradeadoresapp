@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Accion;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,7 +19,8 @@ class HomeController extends Controller
 
     public function portfolio()
     {
-        return view('portfolio');
+        $acciones = Accion::orderBy('nombre', 'asc')->get();
+        return view('portfolio', compact('acciones'));
     }
 
     public function settings()

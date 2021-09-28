@@ -32,19 +32,27 @@
                                     <div class="row">
                                         <div class="mb-3 col-xl-12">
                                             <label class="me-sm-2">Nombre de la acción </label>
-                                            <input type="text" class="form-control" placeholder="25487">
+                                            <div class="input-group mb-3">
+                                                
+                                                <select name='accion' class="form-control">
+                                                    <option value="">Selecciona</option>
+                                                    @foreach ($acciones as $accion)
+                                                    <option value="{{$accion->id}}">{{$accion->nombre}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         </div>
 
                                         <div class="mb-3 col-xl-12">
                                            <label class="me-sm-2">Movimiento</label>
-                                                    <div class="input-group mb-3">
-                                                        
-                                                        <select name='currency' class="form-control">
-                                                            <option value="">Selecciona</option>
-                                                            <option value="bitcoin">Alza</option>
-                                                            <option value="litecoin">Baja</option>
-                                                        </select>
-                                                    </div>
+                                            <div class="input-group mb-3">
+                                                
+                                                <select name='currency' class="form-control">
+                                                    <option value="">Selecciona</option>
+                                                    <option value="bitcoin">Alza</option>
+                                                    <option value="litecoin">Baja</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         
                                         <div class="mb-3 col-xl-12">
