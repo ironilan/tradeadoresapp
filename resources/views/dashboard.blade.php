@@ -35,11 +35,11 @@
                                 <li class="d-flex">
                                     
                                     <div class="flex-grow-1">
-                                        <h5 class="m-0">Inverisión</h6>
+                                        <h5 class="m-0">Inversión</h6>
                                     </div>
                                     <div class="text-end">
                                  
-                                        <span>0.125 USD</span>
+                                        <span>0.125 USD <a href="#" data-toggle="modal" data-target="#modaleditar"><i class="fa fa-pencil"></i></a></span>
                                     </div>
                                 </li>
                                 <li class="d-flex">
@@ -71,19 +71,7 @@
 
             <div class="col-xl-6 col-lg-8 col-xxl-8">
                 <div class="card profile_chart">
-                    <div class="card-header py-0">
-                        <div class="chart_current_data">
-                            <h3>254856 <span>USD</span></h3>
-                            <p class="text-success">125648 <span>USD (20%)</span></p>
-                        </div>
-                        {{-- <div class="duration-option">
-                            <a id="all" class="active">ALL</a>
-                            <a id="one_month" class="">1M</a>
-                            <a id="six_months">6M</a>
-                            <a id="one_year" class="">1Y</a>
-                            <a id="ytd" class="">YTD</a>
-                        </div> --}}
-                    </div>
+                    
                     <div class="card-body">
                         <!-- TradingView Widget BEGIN -->
                         <div class="tradingview-widget-container">
