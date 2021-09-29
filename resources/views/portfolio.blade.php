@@ -130,7 +130,7 @@
                                                      <td>
                                                         <div class="edit-option">
                                                             <a href="#" data-toggle="modal" data-target="#modalcalculator"><i class="fa fa-calculator"></i></a>           
-                                                            <a href="#"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#" data-toggle="modal" data-target="#modaleditar"><i class="fa fa-pencil"></i></a>
                                                             <a href="#"><i class="fa fa-trash"></i></a>
                                                         </div>
                                                     </td>
