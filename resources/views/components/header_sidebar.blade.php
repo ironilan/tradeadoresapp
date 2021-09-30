@@ -61,6 +61,7 @@
                     <span><i class="la la-igloo"></i></span>
                 </a>
             </li>
+            @if (Auth::user()->estado == 'activo')
             <li><a href="{{ url('conversor') }}" data-toggle="tooltip" data-placement="right" title="Exchange">
                     <span><i class="la la-exchange-alt"></i></span>
                 </a>
@@ -69,6 +70,7 @@
                     <span><i class="la la-user"></i></span>
                 </a>
             </li>
+            @endif
             <li><a href="{{ url('settings') }}" data-toggle="tooltip" data-placement="right" title="Setting">
                     <span><i class="la la-tools"></i></span>
                 </a>

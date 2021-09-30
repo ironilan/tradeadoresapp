@@ -15,8 +15,19 @@
             </div>
         </div>
     </div>
+    @if (Auth::user()->estado == 'suspendido')
+    <div class="container mt-4">
+        <div class="alert alert-warning text-center">
+            <strong class="" style="font-size: 25px;">¡Tu membresia ha vencido!</strong>
+            <p> por favor comunicate con El administrador </p>
+            <a href="https://wa.me/51933692888?text=renovar membresía" href="_blank" class="text-danger btn btn-secondary mt-2">Renovar membresía</a>
+        </div>
+    </div>
+    @endif
+    
 </div>
 
+@if (Auth::user()->estado == 'activo')
 <div class="content-body">
     <div class="container-fluid">
         <div class="row">
@@ -160,7 +171,7 @@
         </div>
     </div>
 </div>
-
+@endif
 
 
 

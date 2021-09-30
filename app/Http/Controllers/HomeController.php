@@ -20,6 +20,11 @@ class HomeController extends Controller
     public function conversor()
     {
         $acciones = Accion::orderBy('nombre', 'asc')->get();
+
+        if (Auth::user()->estado == 'suspendido')
+        {
+            return redirect('dashboard');
+        }
         
         return view('conversor', compact('acciones'));
     }
@@ -27,6 +32,12 @@ class HomeController extends Controller
     public function portfolio()
     {
         $acciones = Accion::orderBy('nombre', 'asc')->get();
+
+        if (Auth::user()->estado == 'suspendido')
+        {
+            return redirect('dashboard');
+        }
+
         return view('portfolio', compact('acciones'));
     }
 

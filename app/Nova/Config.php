@@ -4,6 +4,8 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Config extends Resource
@@ -41,6 +43,9 @@ class Config extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+            Text::make('Título', 'titulo'),
+            Image::make('logo')->disk('public'),
+            Image::make('favicon')->disk('public'),
         ];
     }
 
@@ -87,4 +92,19 @@ class Config extends Resource
     {
         return [];
     }
+
+    public static function authorizedToCreate(Request $request)
+    {
+        return false;
+    }
+
+    public function authorizedToDelete(Request $request)
+    {
+        return false;
+    }
+
+    // public function authorizedToUpdate(Request $request)
+    // {
+    //     return false;
+    // }
 }

@@ -4,7 +4,7 @@
                 <div class="row justify-content-center h-100 align-items-center">
                     <div class="col-xl-5 col-md-6">
                         <div class="mini-logo text-center my-5">
-                            <img src="{{ asset('theme/images/m_logo.png') }}" alt="">
+                            <img src="{{ Storage::url(setting()->logo) }}" alt="">
                         </div>
                         <div class="auth-form card">
                             <div class="card-header justify-content-center">

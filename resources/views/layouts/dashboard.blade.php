@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Elaenia </title>
+    <title>{{setting()->titulo}} </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('theme/images/favicon.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ Storage::url(setting()->favicon) }}">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{{ asset('theme/vendor/waves/waves.min.css')}}">
     <link rel="stylesheet" href="{{ asset('theme/vendor/toastr/toastr.min.css')}}">
@@ -73,7 +73,7 @@
     <script src="{{ asset('theme/vendor/waves/waves.min.js')}}"></script>
 
     <script src="{{ asset('theme/vendor/toastr/toastr.min.js')}}"></script>
-    <script src="{{ asset('theme/vendor/toastr/toastr-init.js')}}"></script>
+    {{-- <script src="{{ asset('theme/vendor/toastr/toastr-init.js')}}"></script> --}}
 
     <script src="{{ asset('theme/vendor/circle-progress/circle-progress.min.js')}}"></script>
     <script src="{{ asset('theme/vendor/circle-progress/circle-progress-init.js')}}"></script>
