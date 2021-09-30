@@ -3,7 +3,8 @@
         <div class="row">
             <div class="col-xl-12">
                 <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
-                    <a class="navbar-brand" href="index.html"><img src="./images/w_logo.png" alt="">
+                    <a class="navbar-brand" href="{{ url('dashboard') }}">
+                        <img class="avatarfoto" src="{{Storage::url(Auth::user()->foto)}}" alt="">
                         <span>{{Auth::user()->name}}</span></a>
 
 
@@ -12,7 +13,11 @@
                             
                             <div class="profile_log dropdown">
                                 <div class="user" data-toggle="dropdown">
-                                    <span class="thumb"><i class="la la-user"></i></span>
+                                    @if (Auth::user()->foto)
+                                    <div class="avatar" style="background-image: url('{{Storage::url(Auth::user()->foto)}}');"></div>
+                                    @else
+                                    <div class="avatar" style="background: #cacaca;"></div>
+                                    @endif
                                     <span class="name">{{Auth::user()->name}}</span>
                                     <span class="arrow"><i class="la la-angle-down"></i></span>
                                 </div>
@@ -29,9 +34,15 @@
                                     <a href="lock.html" class="dropdown-item">
                                         <i class="la la-lock"></i> Lock
                                     </a> --}}
-                                    <a href="#" class="dropdown-item logout">
-                                        <i class="la la-sign-out"></i> Logout
-                                    </a>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <a href="#" class="dropdown-item logout" onclick="
+                                                    this.closest('form').submit();">
+                                            <i class="la la-sign-out"></i> Logout
+
+                                            
+                                        </a>
+                                    </form>
                                 </div>
                             </div>
                         </div>

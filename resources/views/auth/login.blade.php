@@ -8,7 +8,7 @@
                         </div>
                         <div class="auth-form card">
                             <div class="card-header justify-content-center">
-                                <h4 class="card-title">Sign in</h4>
+                                <h4 class="card-title">Inicia Sesión</h4>
                             </div>
                             <div class="card-body">
                                 <form name="myform" class="signin_validate" method="POST" action="{{ route('login') }}">
@@ -32,7 +32,7 @@
                                             </label>
                                         </div>
                                         <div class="mb-3 mb-0">
-                                            <a href="#">Forgot Password?</a>
+                                            <a href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
                                         </div>
                                     </div>
                                     <div class="text-center">
@@ -40,7 +40,7 @@
                                     </div>
                                 </form>
                                 <div class="new-account mt-3">
-                                    <p>Don't have an account? <a class="text-primary" href="{{ url('register') }}">Sign up</a></p>
+                                    <p>¿Aún no tienes una cuenta? <a class="text-primary" href="{{ url('register') }}">Sign up</a></p>
                                 </div>
                             </div>
                         </div>

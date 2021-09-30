@@ -5,10 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Operacion extends Model
+class Entrada extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'fecha' => 'datetime'       
+    ];
 
     public function accion()
     {

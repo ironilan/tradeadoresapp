@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="page_title-content">
-                    <p>Welcome Tradiador,
+                    <p>Bienvenido(a),
                         <span> {{Auth::user()->name}}</span>
                     </p>
                 </div>
@@ -28,7 +28,7 @@
                     <div class="card-body pt-0">
                         <div class="balance-widget">
                             <div class="total-balance">
-                                <h3>$63411.00</h3>
+                                <h3>$ <span class="setInversion">{{Auth::user()->inversion}}</span></h3>
                                 <h6>Capital Total</h6>
                             </div>
                             <ul class="list-unstyled">
@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="text-end">
                                  
-                                        <span>0.125 USD <a href="#" data-toggle="modal" data-target="#modaleditar"><i class="fa fa-pencil"></i></a></span>
+                                        <span><span class="setInversion">{{Auth::user()->inversion}}</span> USD <a href="#" data-toggle="modal" data-target="#modaleditar" onclick="getInversion()"><i class="fa fa-pencil"></i></a></span>
                                     </div>
                                 </li>
                                 <li class="d-flex">
@@ -108,71 +108,8 @@
                         <h4 class="card-title">Las más rentables</h4>
                     </div>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-xl-12 col-lg-6 col-xxl-6">
-                                <div class="widget-card">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="widget-stat">
-                                            <div class="coin-title">
-                                                <span><i class="cc BTC-alt"></i></span>
-                                                <h5 class="d-inline-block ms-2 mb-3">Bitcoin <span>(24h)</span>
-                                                </h5>
-                                            </div>
-                                            <h4>USD 1254.36 <span class="badge badge-success ms-2">+ 06%</span>
-                                            </h4>
-                                        </div>
-                                        <div id="btcChart"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-6 col-xxl-6">
-                                <div class="widget-card">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="widget-stat">
-                                            <div class="coin-title">
-                                                <span><i class="cc ETH-alt"></i></span>
-                                                <h5 class="d-inline-block ms-2 mb-3">Ethereum <span>(24h)</span>
-                                                </h5>
-                                            </div>
-                                            <h4>USD 1254.36 <span class="badge badge-danger ms-2">- 06%</span>
-                                            </h4>
-                                        </div>
-                                        <div id="ltcChart"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-6 col-xxl-6">
-                                <div class="widget-card">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="widget-stat">
-                                            <div class="coin-title">
-                                                <span><i class="cc LTC-alt"></i></span>
-                                                <h5 class="d-inline-block ms-2 mb-3">Litecoin <span>(24h)</span>
-                                                </h5>
-                                            </div>
-                                            <h4>USD 1254.36 <span class="badge badge-primary ms-2"> 06%</span>
-                                            </h4>
-                                        </div>
-                                        <div id="xrpChart"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-6 col-xxl-6">
-                                <div class="widget-card">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="widget-stat">
-                                            <div class="coin-title">
-                                                <span><i class="cc XRP-alt"></i></span>
-                                                <h5 class="d-inline-block ms-2 mb-3">Ripple <span>(24h)</span>
-                                                </h5>
-                                            </div>
-                                            <h4>USD 1254.36 <span class="badge badge-danger ms-2">- 06%</span>
-                                            </h4>
-                                        </div>
-                                        <div id="dashChart"></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row" id="responseAcciones">
+                                                     
                         </div>
                     </div>
                 </div>
@@ -184,7 +121,7 @@
                 <div class="card">
                     <div class="card-header border-0 py-0">
                         <h4 class="card-title">Últimas Entradas</h4>
-                        <a href="#">Ver todos </a>
+                        {{-- <a href="#">Ver todos </a> --}}
                     </div>
                     <div class="card-body">
                         <div class="transaction-table">
@@ -195,78 +132,24 @@
                                             <td><span class="sold-thumb"><i class="la la-arrow-down"></i></span>
                                             </td>
 
-                                            <td>
-                                                <span class="badge badge-danger">Sold</span>
+                                            <td class="text-primary">
+                                                Movimiento
                                             </td>
-                                            <td>
-                                                <i class="cc BTC"></i> Bitcoin
+                                            <td class="text-primary">
+                                                 Accion
                                             </td>
-                                            <td>
-                                                Using - Bank *******5264
+                                            <td class="text-primary">
+                                                Precio de entrada
                                             </td>
-                                            <td class="text-danger">-0.000242 BTC</td>
-                                            <td>-0.125 USD</td>
+                                            <td class="text-primary"> Precio de salida</td>
+                                            <td class="text-primary">Fecha</td>
                                         </tr>
-                                        <tr>
-                                            <td><span class="buy-thumb"><i class="la la-arrow-up"></i></span>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-success">Buy</span>
-                                            </td>
-                                            <td>
-                                                <i class="cc LTC"></i> Litecoin
-                                            </td>
-                                            <td>
-                                                Using - Card *******8475
-                                            </td>
-                                            <td class="text-success">-0.000242 BTC</td>
-                                            <td>-0.125 USD</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="sold-thumb"><i class="la la-arrow-down"></i></span>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-danger">Sold</span>
-                                            </td>
-                                            <td>
-                                                <i class="cc XRP"></i> Ripple
-                                            </td>
-                                            <td>
-                                                Using - Card *******8475
-                                            </td>
-                                            <td class="text-danger">-0.000242 BTC</td>
-                                            <td>-0.125 USD</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="buy-thumb"><i class="la la-arrow-up"></i></span>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-success">Buy</span>
-                                            </td>
-                                            <td>
-                                                <i class="cc DASH"></i> Dash
-                                            </td>
-                                            <td>
-                                                Using - Card *******2321
-                                            </td>
-                                            <td class="text-success">-0.000242 BTC</td>
-                                            <td>-0.125 USD</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="sold-thumb"><i class="la la-arrow-down"></i></span>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-danger">Sold</span>
-                                            </td>
-                                            <td>
-                                                <i class="cc BTC"></i> Bitcoin
-                                            </td>
-                                            <td>
-                                                Using - Card *******2321
-                                            </td>
-                                            <td class="text-danger">-0.000242 BTC</td>
-                                            <td>-0.125 USD</td>
-                                        </tr>
+                                        
+                                        
+                                    </tbody>
+
+                                    <tbody id="responseEntradas">
+                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -281,4 +164,100 @@
 
 
 
+@endsection
+
+@section('modal')
+<div class="modal fade" id="modaleditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog " role="document">
+        <div class="modal-content" style="background: #3a3361;">
+            <div class="modal-body" >
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="card settings_menu">
+                            <div class="card-header">
+                                <h4 class="card-title">Editar Inversión</h4>
+                            </div>
+                            <div class="card-body">
+                                <form id="editarInversion" class="identity-upload p4" autocomplete="off">
+                                    <input type="hidden" name="id" id="editId">
+                                    <div class="row">
+                                        <div class="mb-3 col-xl-12">
+                                            <label class="me-sm-2">Inversión o capital</label>
+                                            <input type="text" class="form-control" id="inversion" name="inversion" >
+                                        </div>
+                                        
+                                        <div class="text-center col-12">
+                                            <button type="submit" class="btn btn-success mx-2 waves-effect">Actualizar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('scripts')
+<script>
+    $('#editarInversion').submit(function(e){
+        e.preventDefault();
+        
+        let token = '{{ csrf_token() }}';
+        let data = new FormData(document.getElementById("editarInversion"));
+        let url = '{{ url('setInversion') }}';
+        
+        $.ajax({
+            headers: { 'X-CSRF-TOKEN': token },
+            url: url,
+            type: 'POST',
+            contentType: false,
+            data: data,
+            processData: false,
+            success: res => {
+                $('#modaleditar').modal('hide');
+                $('body').removeClass('modal-open');
+                $('.setInversion').empty().append(res.inversion);
+                //listarEntradas();
+                //listarAcciones();
+            },
+            error: error => {
+                console.log(error);
+            }
+        });
+    });
+
+
+    const listarEntradas = () => {
+        let url = '{{ url('listarEntradas') }}';
+        $.get(url, (res) => {
+            $('#responseEntradas').html(res);
+        });
+    }
+
+
+    const listarAcciones = () => {
+        let url = '{{ url('listarAcciones') }}';
+        $.get(url, (res) => {
+            $('#responseAcciones').html(res);
+        });
+    }
+
+
+    const getInversion = () => {
+        let url = '{{ url('getInversion') }}';
+        $.get(url, (res) => {
+            $('#inversion').val(res);
+        });
+    }
+
+
+    $(document).ready(() => {
+        listarEntradas();
+        listarAcciones();
+    });
+</script>
 @endsection

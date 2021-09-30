@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="page_title-content">
-                            <p>Bienvenido,
+                            <p>Bienvenido (a),
                                 <span> {{Auth::user()->name}}</span>
                             </p>
                         </div>
@@ -28,15 +28,15 @@
                                     
                                     <div class="">
                                         <div class=" fade show active" id="buy" >
-                                            <form method="post" name="myform" class="currency_validate">
+                                            <form id="formConversor" class="currency_validate">
                                                 <div class="mb-3">
                                                     <label class="me-sm-2">Acción</label>
                                                     <div class="input-group mb-3">
-                                                        
-                                                        <select name='currency' class="form-control">
-                                                            <option value="">Nombre de la acción</option>
-                                                            <option value="bitcoin">Bitcoin</option>
-                                                            <option value="litecoin">Litecoin</option>
+                                                        <select name='accion' class="form-control">
+                                                            <option value="">Selecciona</option>
+                                                            @foreach ($acciones as $accion)
+                                                            <option value="{{$accion->id}}">{{$accion->simbolo}} | {{$accion->nombre_completo}}</option>
+                                                            @endforeach
                                                         </select>
                                                     </div>
                                                 </div>
@@ -46,17 +46,17 @@
                                                     <div class="input-group mb-3">
                                                        
                                                         
-                                                        <input type="text" name="currency_amount" class="form-control"
-                                                            placeholder="0.0214 BTC">
+                                                        <input type="text" name="capital" class="form-control"
+                                                            placeholder="0.0214 ">
                                                     </div>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="me-sm-2">Precios</label>
                                                     <div class="input-group">
-                                                        <input type="text" name="currency_amount" class="form-control"
+                                                        <input type="text" name="precio_entrada" class="form-control"
                                                             placeholder="Entrada">
-                                                        <input type="text" name="usd_amount" class="form-control"
+                                                        <input type="text" name="precio_salida" class="form-control"
                                                             placeholder="Salida">
                                                     </div>
                                                     <div class="d-flex justify-content-between mt-3">
@@ -99,30 +99,30 @@
                                             <tbody>
                                                 <tr>
                                                     <td><span class="text-primary">Nombre</span></td>
-                                                    <td><span class="text-primary">Apple - Company Inc Mas Naki</span></td>
+                                                    <td><span class="text-primary" id="nombre">Apple - Company Inc Mas Naki</span></td>
                                                 </tr>
                                                 
                                                 <tr>
                                                     <td>Simbolo</td>
-                                                    <td>AAPL</td>
+                                                    <td id="simbolo">AAPL</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Precio de entrada 1</td>
-                                                    <td>1.20254322323</td>
+                                                    <td id="precioEntrada1">1.20254322323</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Precio de entrada 2</td>
-                                                    <td>$1.5555555555555</td>
+                                                    <td id="precioEntrada2">$1.5555555555555</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Stop Loss General</td>
                                                     <td>
-                                                        <div class="text-danger">$25.00 USD</div>
+                                                        <div class="text-danger " id="stopLoss">$25.00 USD</div>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Lotaje General</td>
-                                                    <td> 0.55</td>
+                                                    <td id="lotaje"> 0.55</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -235,4 +235,37 @@
 
 
         
+@endsection
+
+
+@section('scripts')
+<script>
+    $('#formConversor').submit(function(e){
+        e.preventDefault();
+        
+        let token = '{{ csrf_token() }}';
+        let data = new FormData(document.getElementById("formConversor"));
+        let url = '{{ url('convertir') }}';
+        
+        $.ajax({
+            headers: { 'X-CSRF-TOKEN': token },
+            url: url,
+            type: 'POST',
+            contentType: false,
+            data: data,
+            processData: false,
+            success: res => {
+                $('#nombre').empty().append(res.nombre);
+                $('#simbolo').empty().append(res.simbolo);
+                $('#precioEntrada1').empty().append(res.precioEntrada1);
+                $('#precioEntrada2').empty().append(res.precioEntrada2);
+                $('#stopLoss').empty().append(res.stopLoss);
+                $('#lotaje').empty().append(res.lotaje);
+            },
+            error: error => {
+                console.log(error);
+            }
+        });
+    });
+</script>
 @endsection

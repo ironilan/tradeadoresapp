@@ -4,24 +4,26 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Vyuldashev\NovaMoneyField\Money;
 
-class Accion extends Resource
+class Accionrentable extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Accion::class;
+    public static $model = \App\Models\Accionrentable::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'nombre';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -29,7 +31,7 @@ class Accion extends Resource
      * @var array
      */
     public static $search = [
-        'nombre', 'nombre_completo'
+        'precio', 'porcentaje'
     ];
 
     /**
@@ -42,10 +44,9 @@ class Accion extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Nombre'),
-            Text::make('Nombre completo', 'nombre_completo'),
-            Text::make('simbolo'),
-            Text::make('imagen')->hideFromIndex(),
+            BelongsTo::make('Accion', 'accion', 'App\Nova\Accion'),
+            Text::make('Porcentaje'),
+            Money::make('Precio', 'USD'),
         ];
     }
 

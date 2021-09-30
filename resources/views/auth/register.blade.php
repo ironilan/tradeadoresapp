@@ -8,13 +8,13 @@
                         </div>
                         <div class="auth-form card">
                             <div class="card-header justify-content-center">
-                                <h4 class="card-title">Sign up your account</h4>
+                                <h4 class="card-title">Crea tu cuenta</h4>
                             </div>
                             <div class="card-body">
                                 <form method="post" name="myform" class="signup_validate" action="{{ route('register') }}">
            							@csrf
                                     <div class="mb-3">
-                                        <label>Username</label>
+                                        <label>Nombre</label>
                                         <input type="text" class="form-control" placeholder="username" name="name">
                                     </div>
                                     <div class="mb-3">
@@ -28,11 +28,11 @@
                                             name="password">
                                     </div>
                                     <div class="text-center mt-4">
-                                        <button type="submit" class="btn btn-success btn-block">Sign up</button>
+                                        <button type="submit" class="btn btn-success btn-block">Registrar</button>
                                     </div>
                                 </form>
                                 <div class="new-account mt-3">
-                                    <p>Already have an account? <a class="text-primary" href="{{ url('login') }}">Sign in</a>
+                                    <p>¿Ya tienes una cuenta? <a class="text-primary" href="{{ url('login') }}">Inicia sesión</a>
                                     </p>
                                 </div>
                             </div>
