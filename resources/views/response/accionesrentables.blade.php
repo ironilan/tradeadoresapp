@@ -8,7 +8,7 @@
                         <h5 class="d-inline-block ms-2 mb-3">{{$accion->accion->nombre_completo}}
                         </h5>
                     </div>
-                    <h4>USD {{$accion->precio}} <span class="badge badge-success ms-2">{{$accion->porcentaje}}%</span>
+                    <h4>P. Entrada {{$accion->precio}} <span class="badge badge-success ms-2">{{$accion->porcentaje}}%</span>
                     </h4>
                 </div>
                 <div id="btcChart"></div>

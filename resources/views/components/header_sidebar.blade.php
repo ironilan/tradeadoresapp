@@ -4,8 +4,8 @@
             <div class="col-xl-12">
                 <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
                     <a class="navbar-brand" href="{{ url('dashboard') }}">
-                        <img class="avatarfoto" src="{{Storage::url(Auth::user()->foto)}}" alt="">
-                        <span>{{Auth::user()->name}}</span></a>
+                        <img class="avatarfoto" src="{{Storage::url(setting()->logo)}}" alt="">
+                    </a>
 
 
                     <div class="dashboard_log my-2">

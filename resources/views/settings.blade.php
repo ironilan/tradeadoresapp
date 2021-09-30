@@ -63,7 +63,7 @@
                                                 name="nombre" required>
                                         </div>
                                         <div class="mb-3 col-xl-12">
-                                            <label class="me-sm-2">Fecha de cumpleaños</label>
+                                            <label class="me-sm-2">Fecha de nacimiento</label>
                                             <input type="date" class="form-control" name="cumple" value="{{Carbon\Carbon::parse($user->cumple)->format('Y-m-d')}}">
                                         </div>
                                         <div class="mb-3 col-xl-12">

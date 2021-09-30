@@ -23,7 +23,7 @@ class OperacionController extends Controller
             'movimiento' => 'required',
             'precio_entrada' => 'required',
             'precio_salida' => 'required',
-            'lotaje' => 'required',
+            'acc_invertidas' => 'required',
         ]);
 
         $user = Auth::user();
@@ -31,7 +31,8 @@ class OperacionController extends Controller
         $operacion = new Operacion;
         $operacion->precio_entrada = $request->precio_entrada;
         $operacion->precio_salida = $request->precio_salida;
-        $operacion->lotaje = $request->lotaje;
+        $operacion->precio_salida2 = $request->precio_salida;
+        //$operacion->lotaje = $request->lotaje;
         $operacion->movimiento = $request->movimiento;
         $operacion->accion_id = $request->accion;
         $operacion->estado = 'abierto';        
@@ -41,21 +42,24 @@ class OperacionController extends Controller
         $precioActual = $request->precio_entrada;
 
         //rentabilidad
-        if ($request->precio_entrada > $request->precio_salida) {
-            $rentabilidad = $request->lotaje*100*($request->precio_salida - $precioActual);
+        if ($request->movimiento == 'alza') {
+
+            $rentabilidad = $request->acc_invertidas * 10 * ($precioActual - $operacion->precio_salida2);
         }else{
-            $rentabilidad = $request->lotaje*100*($precioActual - $request->precio_salida);
+            $rentabilidad = $request->acc_invertidas * 10 * (-1*($precioActual - $operacion->precio_salida2));
         }
 
         $capital = $user->inversion;
         //porcentaje
         $porcentaje = $rentabilidad / $capital * 100;
         
+        $lotaje = $request->acc_invertidas / 100;
 
-
-        $operacion->porcentaje = $porcentaje;
-        $operacion->rentabilidad = $rentabilidad;
+        $operacion->porcentaje = bcdiv($porcentaje,'1', 2);
+        $operacion->rentabilidad = bcdiv($rentabilidad,'1', 2);
         $operacion->precio_actual = $precioActual;
+        $operacion->acc_invertidas = $request->acc_invertidas;
+        $operacion->lotaje = bcdiv($lotaje, '1', 2);
 
         $operacion->save();
 
@@ -68,46 +72,36 @@ class OperacionController extends Controller
         $this->validate($request, [
             'estado' => 'required',
             'precio_actual' => 'required',
-            'precio_salida' => 'required',
+            'precio_salida2' => 'required',
             'id' => 'required',
         ]);
 
         $user = Auth::user();
         $operacion = Operacion::find($request->id);
         $estado = $request->estado;
-        $precioActual = $request->precio_actual;
-        $precioSalida = $request->precio_salida;
-
-        $precioEntrada = $operacion->precio_entrada;
+        $precioInicial = $operacion->precio_entrada;
         $movimiento = $operacion->movimiento;
-        
-        $lotaje = $operacion->lotaje;
         
 
         //rentabilidad
-        if ($precioEntrada > $precioSalida) {
-            $rentabilidad = $lotaje*100*($precioSalida - $precioActual);
+        if ($request->movimiento == 'alza') {
+
+            $rentabilidad = $operacion->acc_invertidas * 10 * ($precioInicial - $request->precio_salida2);
         }else{
-            $rentabilidad = $lotaje*100*($precioActual - $precioSalida);
+            $rentabilidad = $operacion->acc_invertidas * 10 * (-1*($precioInicial - $request->precio_salida2));
         }
 
         $capital = $user->inversion;
         //porcentaje
         $porcentaje = $rentabilidad / $capital * 100;
-        
 
 
-        //$operacion->precio_entrada = $request->precio_entrada;
-        $operacion->precio_salida = $request->precio_salida;
-        //$operacion->lotaje = $request->lotaje;
-        //$operacion->movimiento = $request->movimiento;
-        //$operacion->accion_id = $request->accion;
+        $operacion->precio_salida2 = $request->precio_salida2;
+
         $operacion->estado = $estado;        
-        //$operacion->user_id = $user->id;
-        $operacion->porcentaje = $porcentaje;
-        $operacion->rentabilidad = $rentabilidad;
-        $operacion->precio_actual = $precioActual;
 
+        $operacion->porcentaje = bcdiv($porcentaje,'1', 2);
+        $operacion->rentabilidad = $rentabilidad;
         $operacion->save();
 
 
@@ -186,7 +180,7 @@ class OperacionController extends Controller
         $precio_salida = $request->precio_salida;
 
         $precioEntrada2 = $precio_entrada - (($precio_entrada - $precio_salida) / 2);
-        $stopLoss = $precio_salida.' USD';
+        $stopLoss = $precio_salida;
 
         if ($precio_entrada > $precio_salida) {
             $lotaje = 0.01*((0.6 * $user->inversion * 0.1) / ($precio_entrada - $precio_salida));
@@ -194,6 +188,7 @@ class OperacionController extends Controller
             $lotaje = -0.01*((0.6 * $user->inversion * 0.1) / ($precio_entrada - $precio_salida));   
         }
         
+        $acc_invertidos = $lotaje * 10;
 
 
         $datos = [
@@ -203,6 +198,7 @@ class OperacionController extends Controller
             'precioEntrada2' => $precioEntrada2,
             'stopLoss' => $stopLoss,
             'lotaje' => $lotaje,
+            'acc_invertidos' => $acc_invertidos,
         ];
 
         return response()->json($datos, 200);

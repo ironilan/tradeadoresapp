@@ -24,6 +24,8 @@
             margin-right: 10px;
         }
     </style>
+
+    @yield('estilos')
 </head>
 
 <body>
@@ -51,7 +53,7 @@
                             <script>
                                 var CurrentYear = new Date().getFullYear()
                                 document.write(CurrentYear)
-                            </script> Quixlab. All Rights Reserved.
+                            </script> Tradiadores. All Rights Reserved.
                         </div>
                     </div>
                     

@@ -108,21 +108,25 @@
                                                 </tr>
                                                 <tr>
                                                     <td>Precio de entrada 1</td>
-                                                    <td id="precioEntrada1">1.20254322323</td>
+                                                    <td id="precioEntrada1">0.00</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Precio de entrada 2</td>
-                                                    <td id="precioEntrada2">$1.5555555555555</td>
+                                                    <td id="precioEntrada2">0.00</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Stop Loss General</td>
                                                     <td>
-                                                        <div class="text-danger " id="stopLoss">$25.00 USD</div>
+                                                        <div class="text-danger " id="stopLoss">0.00</div>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Lotaje General</td>
-                                                    <td id="lotaje"> 0.55</td>
+                                                    <td id="lotaje"> 0.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Acc. Invertidos</td>
+                                                    <td id="acc_invertidos"> 0.00</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -258,9 +262,10 @@
                 $('#nombre').empty().append(res.nombre);
                 $('#simbolo').empty().append(res.simbolo);
                 $('#precioEntrada1').empty().append(res.precioEntrada1);
-                $('#precioEntrada2').empty().append(res.precioEntrada2);
+                $('#precioEntrada2').empty().append(res.precioEntrada2.toFixed(2));
                 $('#stopLoss').empty().append(res.stopLoss);
-                $('#lotaje').empty().append(res.lotaje);
+                $('#lotaje').empty().append(res.lotaje.toFixed(2));
+                $('#acc_invertidos').empty().append(res.acc_invertidos.toFixed(3));
             },
             error: error => {
                 console.log(error);

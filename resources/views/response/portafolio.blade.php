@@ -34,7 +34,7 @@
                 </span>
                 @endif
             </td>
-            <td>{{$operacion->porncentaje}}%</td>
+            <td>{{$operacion->porcentaje}}%</td>
             <td>{{$operacion->lotaje}}</td>
             <td class="text-danger"> {{$operacion->rentabilidad}}</td>
             <td>{{$operacion->precio_actual}}</td>

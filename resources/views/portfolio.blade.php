@@ -17,18 +17,18 @@
 
 <div class="content-body">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6">
+        <div class="row" >
+            <div class="col-xl-4 col-lg-4 col-md-6" >
                 
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6">
                 
-                <div class="auth-form card">
+                <div class="auth-form card" id="app_crear_operacion">
                     <div class="card-header">
                         <h4 class="card-title">AGREGAR OPERACIÓN</h4>
                     </div>
                     <div class="card-body p-2">
-                        <form id="formProtafolio" class="identity-upload p4">
+                        <form id="formProtafolio" class="identity-upload p4" autocomplete="off">
                             <div class="row">
                                 <div class="mb-3 col-xl-12">
                                     <label class="me-sm-2">Nombre de la acción </label>
@@ -65,8 +65,8 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 col-xl-12">
-                                    <label class="me-sm-2">Lotaje</label>
-                                    <input type="text" class="form-control" placeholder="" name="lotaje">
+                                    <label class="me-sm-2">Acc. Invertidas</label>
+                                    <input type="text" class="form-control" placeholder="" name="acc_invertidas">
                                 </div>
                                
                                
@@ -85,12 +85,12 @@
                 
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="app_list_operaciones">
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-header border-0">
                         <h4 class="card-title">Mis Operaciones</h4>
-                        <h6 class="btn btn-success">Agregar Operación</h6>
+                        <h6 class="btn btn-success app_btn_add_oper " onclick="openForm()">Agregar Operación</h6>
                     </div>
                     <div class="card-body pt-0">
                         <div class="transaction-table">
@@ -129,7 +129,7 @@
                                         </div>
                                         <div class="mb-3 col-xl-12">
                                             <label class="me-sm-2">Precio Salida </label>
-                                            <input type="text" class="form-control" id="editPrecioSalida" name="precio_salida">
+                                            <input type="text" class="form-control" id="editPrecioSalida" name="precio_salida2">
                                         </div>
                                         <div class="mb-3 col-xl-12">
                                             <label class="me-sm-2">Estado</label>
@@ -376,6 +376,14 @@
     </div>
 @endsection
 
+@section('estilos')
+<style>
+    #app_crear_operacion{
+        display: none;
+    }
+</style>
+@endsection
+
 @section('scripts')
 <script>
     const listar = () => {
@@ -383,6 +391,12 @@
         $.get(url, (res) => {
             $('#responseOperaciones').html(res);
         });
+    }
+
+
+    const openForm = () =>{
+        $('#app_crear_operacion').show();
+        $('.app_btn_add_oper').hide();
     }
 
 
@@ -415,7 +429,7 @@
         let url = '{{ url('operaciones') }}/'+idoperacion;
         $.get(url, (res) => {
             $('#editPrecioEntrada').val(res.precio_entrada);
-            $('#editPrecioSalida').val(res.precio_salida);
+            $('#editPrecioSalida').val(res.precio_salida2);
             $('#estadoEdit').val(res.estado);
             $('#editId').val(res.id);
         }); 
@@ -476,7 +490,8 @@
             data: data,
             processData: false,
             success: res => {
-            
+                $('#modaleditar').modal('hide');
+                $('body').removeClass('modal-open');
                listar();
             },
             error: error => {
