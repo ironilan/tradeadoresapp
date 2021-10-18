@@ -188,7 +188,7 @@ class OperacionController extends Controller
             $lotaje = -0.01*((0.6 * $user->inversion * 0.1) / ($precio_entrada - $precio_salida));   
         }
         
-        $acc_invertidos = $lotaje * 10;
+        $acc_invertidos = $lotaje * 100 ;
 
 
         $datos = [

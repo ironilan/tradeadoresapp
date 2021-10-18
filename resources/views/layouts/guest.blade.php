@@ -9,7 +9,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('theme/images/favicon.png')}}">
+   
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ Storage::url(setting()->favicon) }}">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{{asset('theme/vendor/waves/waves.min.css')}}">
     <link rel="stylesheet" href="{{asset('theme/vendor/owlcarousel/css/owl.carousel.min.css')}}">

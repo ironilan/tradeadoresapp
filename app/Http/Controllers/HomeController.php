@@ -5,16 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Accion;
 use App\Models\Accionrentable;
 use App\Models\Entrada;
-use Illuminate\Http\Request;
+use App\Models\Operacion;
 use Auth;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
-    {
+    {   
+        $iduser = Auth::user()->id;
         //$entradas = Entrada::orderBy('id', 'desc')->get();
         //$accionesrentables = Accionrentable::orderBy('id', 'desc')->get();
-        return view('dashboard');
+        $operaciones_abiertas = Operacion::where('user_id', $iduser)->where('estado', 'abierto')->count();
+        $rentanilidad = Operacion::where('user_id', $iduser)->sum('rentabilidad');
+        return view('dashboard', compact('rentanilidad', 'operaciones_abiertas'));
     }
 
     public function conversor()

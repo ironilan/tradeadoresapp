@@ -79,27 +79,14 @@
                     </div>
                     <div class="col-xl-7 col-lg-7 col-md-12">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body" style="margin-top: 0; padding-top: 0;">
                                 <div class="buyer-seller">
-                                    <div class="d-flex  mb-3">
-                                        
-                                        <div class="seller-info text-center ">
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-grow-1">
-                                                    <h4>APPL</h4>
-                                                    <h5>Apple Company sas</h5>
-                                                  
-                                                </div>
-                                                <img class="ms-3" src="./images/profile/1.png" alt="" width="50">
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="table-responsive">
                                         <table class="table">
                                             <tbody>
                                                 <tr>
                                                     <td><span class="text-primary">Nombre</span></td>
-                                                    <td><span class="text-primary" id="nombre">Apple - Company Inc Mas Naki</span></td>
+                                                    <td><span class="text-primary" id="nombre">Apple - Apple Inc </span></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -149,14 +136,11 @@
                                         <div class="card-header">
                                             <h5 class="mb-0 collapsed c-pointer" data-toggle="collapse"
                                                 data-target="#collapseOne1" aria-expanded="false"
-                                                aria-controls="collapseOne1"><i class="fa" aria-hidden="true"></i>What
-                                                Shipping Methods are Available?</h5>
+                                                aria-controls="collapseOne1"><i class="fa" aria-hidden="true"></i>¿Quién es el principal y único responsable de mi cuenta?</h5>
                                         </div>
                                         <div id="collapseOne1" class="collapse show" data-parent="#accordion-faq">
                                             <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high
-                                                life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-                                                cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                                eiusmod.
+                                                La decisión y responsabilidad la tienes tú y solamente tú, lo que se comparte aquí son ideas que pueden o no funcionar.
                                             </div>
                                         </div>
                                     </div>
@@ -164,14 +148,10 @@
                                         <div class="card-header">
                                             <h5 class="mb-0 collapsed c-pointer" data-toggle="collapse"
                                                 data-target="#collapseTwo2" aria-expanded="false"
-                                                aria-controls="collapseTwo2"><i class="fa" aria-hidden="true"></i>How
-                                                Long Will it Take To Get My Package?</h5>
+                                                aria-controls="collapseTwo2"><i class="fa" aria-hidden="true"></i>¿En qué precio debo entrar a la operación?</h5>
                                         </div>
                                         <div id="collapseTwo2" class="collapse" data-parent="#accordion-faq">
-                                            <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high
-                                                life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-                                                cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                                eiusmod.
+                                            <div class="card-body">Nosotros te compartimos una estrategia y unos puntos aproximados, pero tú al final decides en qué precio entrar, podrías tomarlo siempre que los precios no estén lejos de lo recomendado.
                                             </div>
                                         </div>
                                     </div>
@@ -179,14 +159,10 @@
                                         <div class="card-header">
                                             <h5 class="mb-0 collapsed c-pointer" data-toggle="collapse"
                                                 data-target="#collapseThree3" aria-expanded="false"
-                                                aria-controls="collapseThree3"><i class="fa" aria-hidden="true"></i>How
-                                                Do I Track My Order?</h5>
+                                                aria-controls="collapseThree3"><i class="fa" aria-hidden="true"></i>¿Cuánto debería invertir por cada acción?</h5>
                                         </div>
                                         <div id="collapseThree3" class="collapse" data-parent="#accordion-faq">
-                                            <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high
-                                                life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-                                                cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                                eiusmod.
+                                            <div class="card-body">La mejor forma de manejar tu riesgo va a ser teniendo un plan de trading, los precios y lotes que se muestran son predeterminados a un % de riesgo pero tú puedes modificarlo cuando quieras.
                                             </div>
                                         </div>
                                     </div>
@@ -194,14 +170,10 @@
                                         <div class="card-header">
                                             <h5 class="mb-0 collapsed c-pointer" data-toggle="collapse"
                                                 data-target="#collapseThree4" aria-expanded="false"
-                                                aria-controls="collapseThree4"><i class="fa" aria-hidden="true"></i>Do I
-                                                Need A Account To Place Order?</h5>
+                                                aria-controls="collapseThree4"><i class="fa" aria-hidden="true"></i>¿Puedo operar cuando el mercado esté cerrado?</h5>
                                         </div>
                                         <div id="collapseThree4" class="collapse" data-parent="#accordion-faq">
-                                            <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high
-                                                life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-                                                cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                                eiusmod.
+                                            <div class="card-body">No, solo cuando el Mercado está abierto té permitirá abrir y cerrar operaciones, fíjate bien la hora de tu país en relación al Mercado que operamos para que calcules tu tiempo.
                                             </div>
                                         </div>
                                     </div>
@@ -209,14 +181,10 @@
                                         <div class="card-header">
                                             <h5 class="mb-0 collapsed c-pointer" data-toggle="collapse"
                                                 data-target="#collapseThree5" aria-expanded="false"
-                                                aria-controls="collapseThree5"><i class="fa" aria-hidden="true"></i>How
-                                                do I Place an Order?</h5>
+                                                aria-controls="collapseThree5"><i class="fa" aria-hidden="true"></i>¿Qué broker puedo usar?</h5>
                                         </div>
                                         <div id="collapseThree5" class="collapse" data-parent="#accordion-faq">
-                                            <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high
-                                                life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-                                                cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                                eiusmod.
+                                            <div class="card-body">El broker es a libre elección, debes asesorarte bien sobre la información de cada uno de ellos y tomar tu mejor decisión.
                                             </div>
                                         </div>
                                     </div>

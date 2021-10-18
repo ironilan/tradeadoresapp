@@ -62,7 +62,7 @@
                 </a>
             </li>
             @if (Auth::user()->estado == 'activo')
-            <li><a href="{{ url('conversor') }}" data-toggle="tooltip" data-placement="right" title="Exchange">
+            <li><a href="{{ url('conversor') }}" data-toggle="tooltip" data-placement="right" title="Calculadora">
                     <span><i class="la la-exchange-alt"></i></span>
                 </a>
             </li>
@@ -71,7 +71,7 @@
                 </a>
             </li>
             @endif
-            <li><a href="{{ url('settings') }}" data-toggle="tooltip" data-placement="right" title="Setting">
+            <li><a href="{{ url('settings') }}" data-toggle="tooltip" data-placement="right" title="Configuración">
                     <span><i class="la la-tools"></i></span>
                 </a>
             </li>

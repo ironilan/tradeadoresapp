@@ -21,7 +21,13 @@
 
             <td>{{$operacion->precio_entrada}}</td>
 
-            <td>{{$operacion->precio_salida}}</td>
+            <td>
+                @if ($operacion->precio_salida2 === '')
+                {{$operacion->precio_salida}}
+                @else
+                {{$operacion->precio_salida2}}
+                @endif
+            </td>
            
             <td>
                 @if ($operacion->movimiento == 'baja')

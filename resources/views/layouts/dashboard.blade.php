@@ -23,6 +23,14 @@
             border-radius: 50%;
             margin-right: 10px;
         }
+
+        select.form-control{
+            background: #312B53!important;
+        }
+
+        #toast-container .toast-message{
+            max-width: 80%!important;
+        }
     </style>
 
     @yield('estilos')
@@ -75,7 +83,7 @@
     <script src="{{ asset('theme/vendor/waves/waves.min.js')}}"></script>
 
     <script src="{{ asset('theme/vendor/toastr/toastr.min.js')}}"></script>
-    {{-- <script src="{{ asset('theme/vendor/toastr/toastr-init.js')}}"></script> --}}
+    <script src="{{ asset('theme/vendor/toastr/toastr-init.js')}}"></script> 
 
     <script src="{{ asset('theme/vendor/circle-progress/circle-progress.min.js')}}"></script>
     <script src="{{ asset('theme/vendor/circle-progress/circle-progress-init.js')}}"></script>

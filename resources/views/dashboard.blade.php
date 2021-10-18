@@ -56,10 +56,10 @@
                                 <li class="d-flex">
                             
                                     <div class="flex-grow-1">
-                                        <h5 class="m-0">Invertido</h6>
+                                        <h5 class="m-0">Operaciones abiertas</h6>
                                     </div>
                                     <div class="text-end">
-                                        <h5>0.000242 LTC</h5>
+                                        <h5>{{$operaciones_abiertas}}</h5>
                                    
                                     </div>
                                 </li>
@@ -69,7 +69,7 @@
                                         <h5 class="m-0">Rentabilidad</h6>
                                     </div>
                                     <div class="text-end">
-                                        <h5>0.000242 XRP</h5>
+                                        <h5>{{$rentanilidad}}</h5>
                        
                                     </div>
                                 </li>
